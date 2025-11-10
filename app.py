@@ -206,7 +206,7 @@ def handle_message(event):
 def handle_postback(event):
     data = event.postback.data
     # 讓使用者看得到他點了什麼
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'你點選：{data}'))
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'{data}'))
 
 
 if __name__ == '__main__':
