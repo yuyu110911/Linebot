@@ -21,10 +21,10 @@ from linebot.models import (
 app = Flask(__name__)
 
 # --- 從環境變數讀取金鑰（Render 後台設定） ---
-CHANNEL_ACCESS_TOKEN = os.environ.get("K8HmKWzCG9SY8CCARvhIRUQogYMipLHyskI87esFcFh89PIymhWQeC3LfEv9OSB50U2F3v05FYEdfI4sZ9FIuTAHl0UThfNhJBSemZe4CPvRyWZukDlra2oLPkoJMlF5JqUP1xs6wgCnQZaSetcCVgdB04t89/1O/w1cDnyilFU=", "")
-CHANNEL_SECRET = os.environ.get("dd3e255491f797dd4af308fabcac2f18", "")
+CHANNEL_ACCESS_TOKEN = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN", "BSCI9m8E4x3umvlkfaFPAHmrmuRSiK8yOyZQKMDPtAn0xs/RVR3PopmE6Jt+1BX10U2F3v05FYEdfI4sZ9FIuTAHl0UThfNhJBSemZe4CPtcJ8ISywfFjseiPiDOUkSoTjzzX7VXSr6B/vE36Q0Z8QdB04t89/1O/w1cDnyilFU=")
+CHANNEL_SECRET = os.environ.get("LINE_CHANNEL_SECRET", "2c4bce10de342f131f1650418c57594b")
 if not CHANNEL_ACCESS_TOKEN or not CHANNEL_SECRET:
-    raise RuntimeError("K8HmKWzCG9SY8CCARvhIRUQogYMipLHyskI87esFcFh89PIymhWQeC3LfEv9OSB50U2F3v05FYEdfI4sZ9FIuTAHl0UThfNhJBSemZe4CPvRyWZukDlra2oLPkoJMlF5JqUP1xs6wgCnQZaSetcCVgdB04t89/1O/w1cDnyilFU=/dd3e255491f797dd4af308fabcac2f18")
+    raise RuntimeError("請在環境變數設定 LINE_CHANNEL_ACCESS_TOKEN / LINE_CHANNEL_SECRET")
 
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
