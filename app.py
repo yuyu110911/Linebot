@@ -196,9 +196,9 @@ def handle_message(event):
         except Exception as e:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
 
-    else:
+    #else:
         # 其他訊息回覆
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='指令：@認識動物 / @動物園影片 / @動物介紹 / @動物園地點'))
+        #line_bot_api.reply_message(event.reply_token, TextSendMessage(text='指令：@認識動物 / @動物園影片 / @動物介紹 / @動物園地點'))
 
 
 # ---- Postback 事件處理（按下 Carousel 的 Postback 會來這裡）----
